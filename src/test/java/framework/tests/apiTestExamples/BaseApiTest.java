@@ -1,6 +1,7 @@
 package framework.tests.apiTestExamples;
 
 import com.github.javafaker.Faker;
+import framework.tests.BaseWikiTest;
 import framework.web.api.sites.wiki.restApi.controllers.ApiController;
 import framework.web.api.sites.wiki.restApi.pojos.UserPayload;
 import framework.web.api.sites.wiki.restApi.pojos.bookingDataPayload.BookingDataPayload;
@@ -9,7 +10,7 @@ import framework.web.api.sites.wiki.restApi.pojos.bookingDataPayload.BookingDate
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 
-public class BaseApiTest {
+public class BaseApiTest extends BaseWikiTest {
     /** Main api controller implementation, randomized pojo objects*/
 
     public Faker faker = new Faker();

@@ -1,7 +1,7 @@
 package framework.tests.uiTestExamples.startPage;
 
 import com.codeborne.selenide.Condition;
-import framework.tests.uiTestExamples.BaseTest;
+import framework.tests.uiTestExamples.BaseUiTest;
 import framework.web.api.drivers.Driver;
 import framework.web.api.sites.wiki.Wiki;
 import io.qameta.allure.Epic;
@@ -10,7 +10,7 @@ import io.qameta.allure.Story;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 
-public class StartPageTest extends BaseTest {
+public class StartPageUiTest extends BaseUiTest {
     /** Tests of WIKI start page*/
 
     public static Wiki wiki = Driver.site.wiki;
