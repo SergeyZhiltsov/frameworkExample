@@ -12,5 +12,15 @@ import static org.aeonbits.owner.Config.DisableableFeature.PARAMETER_FORMATTING;
 public interface ApiProjectConfig extends Config {
     ApiProjectConfig BASE_API_CONFIG = ConfigFactory.create(ApiProjectConfig.class, System.getenv(), System.getProperties());
 
+    @Key("PROJECT.BASE.URI")
+    String baseUri();
 
+    @Key("PROJECT.TEST.URI")
+    String testUri();
+
+    @Key("PROJECT.STG.URI")
+    String stgUri();
+
+    @Key("PROJECT.PROD.URI")
+    String prodUri();
 }

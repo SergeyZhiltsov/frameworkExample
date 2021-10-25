@@ -3,6 +3,7 @@ package framework.web.core.managers;
 import com.codeborne.selenide.Configuration;
 
 import static framework.ProjectConfig.BASE_CONFIG;
+import static framework.web.api.sites.wiki.restApi.ApiProjectConfig.BASE_API_CONFIG;
 import static framework.web.core.UiProjectConfig.BASE_UI_CONFIG;
 
 public class DriverManager {
@@ -10,7 +11,14 @@ public class DriverManager {
 
         setEnv();
         setDriver();
-        setBaseUri();
+        setBaseUiUri();
+
+    }
+
+    public static void setApi() {
+
+        setEnv();
+        setBaseApiUri();
 
     }
 
@@ -36,31 +44,59 @@ public class DriverManager {
 
     }
 
-    public static void setBaseUri() {
+    public static void setBaseUiUri() {
 
-        if (System.getenv("baseUri") == null) {
+        if (System.getenv("baseUiUri") == null) {
 
             switch (System.getProperty("env")) {
 
                 case "test": {
-                    System.setProperty("baseUri", BASE_UI_CONFIG.testUri());
+                    System.setProperty("baseUiUri", BASE_UI_CONFIG.testUri());
                 }
 
                 case "stg": {
-                    System.setProperty("baseUri", BASE_UI_CONFIG.stgUri());
+                    System.setProperty("baseUiUri", BASE_UI_CONFIG.stgUri());
                 }
 
                 case "prod": {
-                    System.setProperty("baseUri", BASE_UI_CONFIG.prodUri());
+                    System.setProperty("baseUiUri", BASE_UI_CONFIG.prodUri());
                 }
 
                 default:
                 {
-                    System.setProperty("baseUri", BASE_UI_CONFIG.baseUri());
+                    System.setProperty("baseUiUri", BASE_UI_CONFIG.baseUri());
                 }
             }
         } else {
-            System.setProperty("baseUri", System.getenv("baseUri"));
+            System.setProperty("baseUiUri", System.getenv("baseUiUri"));
+        }
+    }
+
+    public static void setBaseApiUri() {
+
+        if (System.getenv("baseApiUri") == null) {
+
+            switch (System.getProperty("env")) {
+
+                case "test": {
+                    System.setProperty("baseApiUri", BASE_API_CONFIG.testUri());
+                }
+
+                case "stg": {
+                    System.setProperty("baseApiUri", BASE_API_CONFIG.stgUri());
+                }
+
+                case "prod": {
+                    System.setProperty("baseApiUri", BASE_API_CONFIG.prodUri());
+                }
+
+                default:
+                {
+                    System.setProperty("baseApiUri", BASE_API_CONFIG.baseUri());
+                }
+            }
+        } else {
+            System.setProperty("baseApiUri", System.getenv("baseApiUri"));
         }
     }
 

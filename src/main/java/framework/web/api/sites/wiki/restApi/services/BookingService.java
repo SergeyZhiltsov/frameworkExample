@@ -6,7 +6,11 @@ import framework.web.api.sites.wiki.restApi.pojos.bookingDataPayload.BookingData
 import io.qameta.allure.Step;
 
 public class BookingService extends ApiService {
-    /** Actions of booking service*/
+    /** Routes */
+
+    public final String BOOKING = "/booking";
+
+    /** Actions of booking service */
     public AssertableResponse createBooking(BookingDataPayload bookingDataPayload) {
         JsonObject bookingData = new JsonObject();
         JsonObject requestObject = new JsonObject();
@@ -27,7 +31,7 @@ public class BookingService extends ApiService {
                 .header("Content-Type", "application/json")
                 .body(requestObject.toJson())
                 .when()
-                .post("https://restful-booker.herokuapp.com/booking")
+                .post(System.getProperty("baseApiUri") + BOOKING)
                 .then().log().all().extract().response());
     }
 }

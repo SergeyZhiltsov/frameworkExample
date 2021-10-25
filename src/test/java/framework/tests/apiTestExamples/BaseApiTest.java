@@ -6,6 +6,8 @@ import framework.web.api.sites.wiki.restApi.controllers.ApiController;
 import framework.web.api.sites.wiki.restApi.pojos.UserPayload;
 import framework.web.api.sites.wiki.restApi.pojos.bookingDataPayload.BookingDataPayload;
 import framework.web.api.sites.wiki.restApi.pojos.bookingDataPayload.BookingDatePayload;
+import framework.web.core.managers.DriverManager;
+import org.testng.annotations.BeforeMethod;
 
 import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +17,11 @@ public class BaseApiTest extends BaseWikiTest {
 
     public Faker faker = new Faker();
     public ApiController controller = new ApiController();
+
+    @BeforeMethod
+    public void setUp(){
+        DriverManager.setApi();
+    }
 
     public BookingDataPayload newBookingDataPayload() {
         return new BookingDataPayload()

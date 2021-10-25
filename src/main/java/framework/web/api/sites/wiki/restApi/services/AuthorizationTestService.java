@@ -6,6 +6,10 @@ import framework.web.api.sites.wiki.restApi.pojos.UserPayload;
 import io.qameta.allure.Step;
 
 public class AuthorizationTestService extends ApiService{
+    /** Routes */
+
+    public final String AUTH = "/auth";
+
     /** Actions of auth service*/
     public AssertableResponse authorization (UserPayload userPayload) {
 
@@ -20,7 +24,7 @@ public class AuthorizationTestService extends ApiService{
                 .header("Content-Type", "application/json")
                 .body(authorizationRequestObject.toJson())
                 .when()
-                .post("https://restful-booker.herokuapp.com/auth")
+                .post(System.getProperty("baseApiUri") + AUTH)
                 .then().log().all().extract().response());
     }
 
