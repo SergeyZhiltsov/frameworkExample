@@ -1,0 +1,12 @@
+# Project exclude paths
+/.gradle/
+/build/
+/build/classes/java/main/
+/build/classes/java/test/
+build
+.idea
+.gradle
+.allure
+/lib/
+/allure-results/
+/gradle/
