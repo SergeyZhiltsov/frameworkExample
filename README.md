@@ -1,6 +1,6 @@
 # frameworkExample
-* This test framework is created only for researching and demonstrating purposes
-* Main goal of this test framework is to achieve balance beetwen comfort and simplicity of writing code, speed of tests execution and memory management
+* This test tests is created only for researching and demonstrating purposes
+* Main goal of this test tests is to achieve balance beetwen comfort and simplicity of writing code, speed of tests execution and memory management
 * Framework can be easly extended to projects needs(add Android/iOS driver, add additional subprojects, web sites etc.)
 
 ### How do I get set up? ###

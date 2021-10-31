@@ -3,7 +3,7 @@
 <suite name="test" parallel="methods" thread-count="5"  data-provider-thread-count="1" >
     <test name="testSuiteApi">
         <packages>
-            <package name="framework.tests.apiTestExamples.*"/>
+            <package name="tests.apiTestExamples.*"/>
         </packages>
     </test>
 </suite>

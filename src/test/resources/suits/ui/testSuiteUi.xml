@@ -3,7 +3,7 @@
 <suite name="test" parallel="methods" thread-count="5"  data-provider-thread-count="1" >
     <test name="testSuiteUi">
         <packages>
-            <package name="framework.tests.uiTestExamples.startPage.*"/>
+            <package name="tests.uiTestExamples.startPage.*"/>
         </packages>
     </test>
 </suite>
